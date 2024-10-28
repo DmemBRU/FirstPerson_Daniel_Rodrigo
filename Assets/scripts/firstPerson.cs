@@ -1,12 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class firstPerson : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    [Header("Movimiento")]
     [SerializeField] private float velocidadMovimiento;
     private Camera cam;
+    [SerializeField] private float magnitudGravedad;
+    private Vector3 movimientoVertical;
+    [SerializeField] private float alturaSalto;
+
+    [Header("Deteccion Suelo")]
+    [SerializeField] Transform pies;
+    [SerializeField] private float radioDeteccion;
+    [SerializeField] LayerMask queEsSuelo;
 
     CharacterController controller;
     void Start()
@@ -32,6 +43,39 @@ public class firstPerson : MonoBehaviour
             controller.Move(movimiento * velocidadMovimiento * Time.deltaTime);
         }
 
-        
+        aplicarGravedad();
+        tocoSuelo();
     }
+
+    private void aplicarGravedad()
+    {
+        movimientoVertical.y += magnitudGravedad * Time.deltaTime;
+        controller.Move(movimientoVertical * Time.deltaTime);
+    }
+
+    private void tocoSuelo()
+    {
+       Collider[] collsDetectados = Physics.OverlapSphere(pies.position, radioDeteccion, queEsSuelo);
+
+        if (collsDetectados.Length > 0) 
+        { 
+          movimientoVertical.y = 0;
+            Saltar();   
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(pies.position, radioDeteccion);
+    }
+
+    private void Saltar()
+    {
+       if(Input.GetKeyDown(KeyCode.Space))
+       {
+         movimientoVertical.y = Mathf.Sqrt(-2* magnitudGravedad * alturaSalto);    
+       }
+    }
+
 }
