@@ -7,6 +7,8 @@ public class firstPerson : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    [SerializeField] private float vidas;
+
     [Header("Movimiento")]
     [SerializeField] private float velocidadMovimiento;
     private Camera cam;
