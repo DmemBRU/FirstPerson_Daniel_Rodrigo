@@ -10,9 +10,11 @@ public class enemigo : MonoBehaviour
     [SerializeField] private firstPerson player;
     [SerializeField] private float radioAtaque;
     [SerializeField] private LayerMask queEsDaniable;
+    [SerializeField] private float vida;
     // Start is called before the first frame update
     void Start()
     {
+        //Collider[] collsDetectados
        agent = GetComponent<NavMeshAgent>();
 
         player = GameObject.FindObjectOfType<firstPerson>();
@@ -39,5 +41,16 @@ public class enemigo : MonoBehaviour
     {
       // Collider[] collsDetectados = Physics.OverlapSphere( atackPoint.position, radioAtaque, queEsDaniable);
         //Physics.CheckSphere();
+    }
+
+    public void RecibirDanio(float danioRecibido)
+    {
+        vida -= danioRecibido;
+        if (vida <= 0) 
+        {
+            Destroy(this.gameObject);
+        
+        }
+
     }
 }
