@@ -11,6 +11,10 @@ public class enemigo : MonoBehaviour
     [SerializeField] private float radioAtaque;
     [SerializeField] private LayerMask queEsDaniable;
     [SerializeField] private float vida;
+     private Rigidbody[] huesos;
+
+    public float Vida { get => vida; set => vida = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +22,8 @@ public class enemigo : MonoBehaviour
        agent = GetComponent<NavMeshAgent>();
 
         player = GameObject.FindObjectOfType<firstPerson>();
+
+        cambiarEstadoHuesos(true);
     }
 
     // Update is called once per frame
@@ -42,15 +48,18 @@ public class enemigo : MonoBehaviour
       // Collider[] collsDetectados = Physics.OverlapSphere( atackPoint.position, radioAtaque, queEsDaniable);
         //Physics.CheckSphere();
     }
-
-    public void RecibirDanio(float danioRecibido)
+    public void morir()
     {
-        vida -= danioRecibido;
-        if (vida <= 0) 
+        cambiarEstadoHuesos(false);
+        agent.enabled = false;
+        Destroy(gameObject, 10);
+    }
+    private void cambiarEstadoHuesos(bool estado)
+    {
+        for (int i = 0; i < huesos.Length; i++)
         {
-            Destroy(this.gameObject);
-        
-        }
+            huesos[i].isKinematic = estado;
 
+        }
     }
 }

@@ -26,9 +26,12 @@ public class pistolita : MonoBehaviour
 
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, misDatos.rango))
             {
-                Debug.Log(hitInfo.transform.name);
+                if (hitInfo.transform.CompareTag("enemyPart"))
+                {
+                    Debug.Log(hitInfo.transform.name);
 
-                hitInfo.transform.GetComponent<enemigo>().RecibirDanio(misDatos.daño);
+                    hitInfo.transform.GetComponent<enemyPart>().RecibirDanio(misDatos.daño);
+                }
 
 
             }
