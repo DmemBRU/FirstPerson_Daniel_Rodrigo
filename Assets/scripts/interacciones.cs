@@ -18,19 +18,20 @@ public class interacciones : MonoBehaviour
     {
         if ( Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo))
         {
-            if(hitInfo.transform.CompareTag("caja"))
+            
+
+            if(hitInfo.transform.TryGetComponent(out caja scriptcaja))
             {
-                Debug.Log("es una caja");
                 interactuableActual = hitInfo.transform;
                 interactuableActual.GetComponent<Outline>().enabled = true;
-            }
-            else if (interactuableActual)
-            {
-                interactuableActual.GetComponent <Outline>().enabled = false;
-                interactuableActual = null;
-            }
 
-            
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    scriptcaja.abrir();
+
+                }
+
+            }
         }
     }
 }

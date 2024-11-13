@@ -1422,6 +1422,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainScript: {fileID: 1739792656}
   multiplicador: 2
+--- !u!1 &1463733348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1463733350}
+  - component: {fileID: 1463733349}
+  m_Layer: 0
+  m_Name: puntoSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1463733349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463733348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8346e31be2b65a14eb7c681ad6ddf2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntosSpawns:
+  - {fileID: 1463733350}
+  - {fileID: 1504361918}
+  enemigoPrefab: {fileID: 0}
+--- !u!4 &1463733350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463733348}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 57.96247, y: 210.31, z: 141.66266}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1504361916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504361918}
+  - component: {fileID: 1504361917}
+  m_Layer: 0
+  m_Name: puntoSpawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1504361917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504361916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8346e31be2b65a14eb7c681ad6ddf2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntosSpawns:
+  - {fileID: 0}
+  enemigoPrefab: {fileID: 0}
+--- !u!4 &1504361918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504361916}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 57.96247, y: 200.97, z: 38.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554745273 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7268111616092913727, guid: 2b49919cdd71e644dbc3f532aba6530d,
@@ -2231,7 +2326,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5006512736252288413}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -159.462, z: 0}
 --- !u!111 &3506690171272863750
 Animation:
   m_ObjectHideFlags: 0
@@ -2241,8 +2336,9 @@ Animation:
   m_GameObject: {fileID: 8296172668284022670}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
+  m_Animation: {fileID: 7400000, guid: 1471170928830bb4ba3643c3062d78a4, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 1471170928830bb4ba3643c3062d78a4, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2974,6 +3070,7 @@ GameObject:
   - component: {fileID: 3295203783142018591}
   - component: {fileID: 8587989076287784943}
   - component: {fileID: 7510363260402369076}
+  - component: {fileID: 8587989076287784944}
   m_Layer: 0
   m_Name: Object004
   m_TagString: caja
@@ -2991,8 +3088,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5006512736252288413}
   - component: {fileID: 3506690171272863750}
+  - component: {fileID: 8296172668284022674}
   - component: {fileID: 8296172668284022671}
   - component: {fileID: 8296172668284022672}
+  - component: {fileID: 8296172668284022673}
   m_Layer: 0
   m_Name: AmmoBox
   m_TagString: caja
@@ -3400,6 +3499,39 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1243.05, y: 426.6356, z: 756.27527}
   m_Center: {x: -0.00000019850407, y: 41.65988, z: 13.4289255}
+--- !u!95 &8296172668284022673
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172668284022670}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8296172668284022674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172668284022670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf5db75fc6f132428ab6ed5d111d4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &8587989076287784943
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3408,6 +3540,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8152493776429676959}
   m_Mesh: {fileID: 4300000, guid: 45fb3b613218da844b047d1f9349e0d6, type: 3}
+--- !u!111 &8587989076287784944
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152493776429676959}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 1471170928830bb4ba3643c3062d78a4, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 1471170928830bb4ba3643c3062d78a4, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3422,3 +3570,5 @@ SceneRoots:
   - {fileID: 2059309187}
   - {fileID: 496961135}
   - {fileID: 5006512736252288413}
+  - {fileID: 1463733350}
+  - {fileID: 1504361918}
