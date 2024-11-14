@@ -9,13 +9,17 @@ public class spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(generarUnEnemigo());
     }
 
     IEnumerator generarUnEnemigo()
     {
-        Instantiate(enemigoPrefab, puntosSpawns[0].position, Quaternion.identity);
-        yield return null;  
+       
+        while (true) 
+        {
+            Instantiate(enemigoPrefab, puntosSpawns[Random.Range(0,puntosSpawns.Length)].position, Quaternion.identity);
+            yield return null;
 
+        }
     }
 }
