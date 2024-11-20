@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -62,4 +63,13 @@ public class enemigo : MonoBehaviour
 
         }
     }
+
+    private void enfocarPlayer()
+    {
+        Vector3 direccionAPlayer = (player.transform.position - this.gameObject.transform.position).normalized;
+        direccionAPlayer.y = 0;
+        Quaternion.LookRotation(direccionAPlayer);
+
+    }
+
 }
