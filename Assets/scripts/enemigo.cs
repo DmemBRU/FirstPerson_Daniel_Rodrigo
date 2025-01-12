@@ -9,10 +9,17 @@ public class enemigo : MonoBehaviour
 
     private NavMeshAgent agent;
     [SerializeField] private firstPerson player;
+
+    private Animator anim;
+    private bool ventanaAbierta = false;
+
+    [SerializeField] private float danioAtaque;
+    [SerializeField] private Transform puntoAtaque;
     [SerializeField] private float radioAtaque;
     [SerializeField] private LayerMask queEsDaniable;
+    private bool danioRealizado = false;
     [SerializeField] private float vida;
-     private Rigidbody[] huesos;
+    private Rigidbody[] huesos;
 
     public float Vida { get => vida; set => vida = value; }
 
@@ -20,9 +27,11 @@ public class enemigo : MonoBehaviour
     void Start()
     {
         //Collider[] collsDetectados
-       agent = GetComponent<NavMeshAgent>();
-
+        agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindObjectOfType<firstPerson>();
+        anim = GetComponent<Animator>();
+        //huesos = GetComponentInChildren<Rigidbody>();
+
 
         cambiarEstadoHuesos(true);
     }
@@ -30,29 +39,44 @@ public class enemigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.transform.position);
+        perseguir();
+       
 
-        if(agent.remainingDistance <= agent.stoppingDistance)
+        if (ventanaAbierta && danioRealizado == false)
         {
-            agent.isStopped = true;
-            //Animation.SetBool("attacking", true);
+            DetectarJugador();
         }
-
-        //if (ventanaAbierta)
-       // {
-       //     DetectarJugador()
-       // }
     }
 
     private void DetectarJugador()
     {
-      // Collider[] collsDetectados = Physics.OverlapSphere( atackPoint.position, radioAtaque, queEsDaniable);
-        //Physics.CheckSphere();
+      Collider[] collsDetectados = Physics.OverlapSphere( puntoAtaque.position, radioAtaque, queEsDaniable);
+        if(collsDetectados.Length > 0)
+        {
+            for(int i=0; i<collsDetectados.Length; i++){
+
+                collsDetectados[i].GetComponent<firstPerson>().recibirdanio(danioAtaque);
+            }
+            danioRealizado = true;
+        }
     }
+
+    private void perseguir()
+    {
+        agent.SetDestination(player.transform.position);
+        if(!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            agent.isStopped = true;
+            anim.SetBool("ataque", true);
+            enfocarPlayer();
+        }
+    }
+
     public void morir()
     {
         cambiarEstadoHuesos(false);
         agent.enabled = false;
+        anim.enabled = false;
         Destroy(gameObject, 10);
     }
     private void cambiarEstadoHuesos(bool estado)
@@ -68,7 +92,7 @@ public class enemigo : MonoBehaviour
     {
         Vector3 direccionAPlayer = (player.transform.position - this.gameObject.transform.position).normalized;
         direccionAPlayer.y = 0;
-        Quaternion.LookRotation(direccionAPlayer);
+        transform.rotation = Quaternion.LookRotation(direccionAPlayer);
 
     }
 

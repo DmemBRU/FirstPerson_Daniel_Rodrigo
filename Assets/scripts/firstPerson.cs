@@ -10,6 +10,7 @@ public class firstPerson : MonoBehaviour
     [SerializeField] private float vidas;
 
     [Header("Movimiento")]
+
     [SerializeField] private float velocidadMovimiento;
     private Camera cam;
     [SerializeField] private float magnitudGravedad;
@@ -78,6 +79,14 @@ public class firstPerson : MonoBehaviour
        {
          movimientoVertical.y = Mathf.Sqrt(-2* magnitudGravedad * alturaSalto);    
        }
+    }
+
+    public void recibirdanio(float danioRecibido)
+    {
+        vidas -= danioRecibido;
+        if(vidas <= 0){
+            Destroy(gameObject);
+        }
     }
 
 }
