@@ -26,14 +26,14 @@ public class armaAutomatica : MonoBehaviour
             if (Input.GetMouseButton(0) && timer >= misDatos.cadencia )
             {
                 timer = 0;
-                system.Play();
+              system.Play();
                 if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, misDatos.rango))
                 {
                     if (hitInfo.transform.CompareTag("enemyPart"))
                     {
                         Debug.Log(hitInfo.transform.name);
 
-                        hitInfo.transform.GetComponent<enemyPart>().RecibirDanio(misDatos.daño);
+                       hitInfo.transform.GetComponent<enemyPart>().RecibirDanio(misDatos.daño);
                     }
 
 

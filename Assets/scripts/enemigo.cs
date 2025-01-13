@@ -30,7 +30,7 @@ public class enemigo : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindObjectOfType<firstPerson>();
         anim = GetComponent<Animator>();
-        //huesos = GetComponentInChildren<Rigidbody>();
+        huesos = GetComponentsInChildren<Rigidbody>();
 
 
         cambiarEstadoHuesos(true);

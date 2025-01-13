@@ -244,6 +244,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+--- !u!1 &104851540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3726234357165293241, guid: 4044255eb4e34f24fa13b30a18c52b73,
+    type: 3}
+  m_PrefabInstance: {fileID: 7483486859205404236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &152696099 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8397788476163212868, guid: 2b49919cdd71e644dbc3f532aba6530d,
@@ -788,7 +794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   system: {fileID: 7483486859205404238}
-  misDatos: {fileID: 0}
+  misDatos: {fileID: 11400000, guid: efa9c9a8b8012fa49998910752e98722, type: 2}
 --- !u!1001 &792785261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1554,6 +1560,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainScript: {fileID: 1739792656}
   multiplicador: 0
+--- !u!1 &1328933646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 189298, guid: 705cb262fd0457348b5fe13bd23e8756,
+    type: 3}
+  m_PrefabInstance: {fileID: 5657962345037453099}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1432609630 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 153434, guid: 141863aeb86dd534ea8951ec62bcc181,
@@ -2526,6 +2538,35 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 7483486859205404236}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2027702242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104851540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfea5ed4cd5feff47bd657f6899ae6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionLossEnabled: 1
+  visionLossStartsAt: 0.55
+  visionLossMaxEffect: 0.6
+  visionLossHeartBeat: 0
+  detailLossEnabled: 1
+  detailLossStartsAt: 0.45
+  detailLossMaxEffect: 0.8
+  colorLossEnabled: 1
+  colorLossStartsAt: 0.65
+  colorLossTowardRedStartsAt: 0.15
+  doubleVisionEnabled: 1
+  doubleVisionStartsAt: 0.25
+  doubleVisionMaxEffect: 0.35
+  doubleVisionWaving: 0.5
+  stopEffectsWhenZeroHealth: 1
+  showInEditor: 1
+  simulateHealth: 1
 --- !u!1 &2059309183
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,7 +3259,7 @@ PrefabInstance:
     - target: {fileID: 8055612621724468798, guid: 2b49919cdd71e644dbc3f532aba6530d,
         type: 3}
       propertyPath: danioAtaque
-      value: 1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 8055612621724468798, guid: 2b49919cdd71e644dbc3f532aba6530d,
         type: 3}
@@ -3553,7 +3594,12 @@ PrefabInstance:
     - target: {fileID: 5603122768805619214, guid: 4044255eb4e34f24fa13b30a18c52b73,
         type: 3}
       propertyPath: vidas
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5603122768805619214, guid: 4044255eb4e34f24fa13b30a18c52b73,
+        type: 3}
+      propertyPath: alturaSalto
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5988628732607542726, guid: 4044255eb4e34f24fa13b30a18c52b73,
         type: 3}
@@ -3655,6 +3701,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 2
       addedObject: {fileID: 1963335349}
+    - targetCorrespondingSourceObject: {fileID: 3726234357165293241, guid: 4044255eb4e34f24fa13b30a18c52b73,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2027702242}
     - targetCorrespondingSourceObject: {fileID: 4461326583907300683, guid: 4044255eb4e34f24fa13b30a18c52b73,
         type: 3}
       insertIndex: -1
@@ -3682,12 +3732,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7483486859205404236}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7483486859205404240 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1043053303206071290, guid: 4044255eb4e34f24fa13b30a18c52b73,
-    type: 3}
-  m_PrefabInstance: {fileID: 7483486859205404236}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7483486859205404241 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4461326583907300683, guid: 4044255eb4e34f24fa13b30a18c52b73,
@@ -3707,8 +3751,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armas:
-  - {fileID: 5657962345037453100}
-  - {fileID: 7483486859205404240}
+  - {fileID: 753498499}
+  - {fileID: 1328933646}
+  - {fileID: 8314133915748823611}
+  - {fileID: 1432609630}
 --- !u!23 &7510363260402369076
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6344,7 +6390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8314133915748823613
 GameObject:
   m_ObjectHideFlags: 0
@@ -6718,8 +6764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed5cdf47a52b1b4baa2fcbee83ba9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  system: {fileID: 0}
-  misDatos: {fileID: 0}
+  system: {fileID: 7483486859205404238}
+  misDatos: {fileID: 11400000, guid: 4d3c18cce7575754289279bd644d93ab, type: 2}
 --- !u!33 &8587989076287784943
 MeshFilter:
   m_ObjectHideFlags: 0
