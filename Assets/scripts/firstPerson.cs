@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class firstPerson : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] private float vidas;
+    [SerializeField]public float vidas;
 
     [Header("Movimiento")]
 
@@ -21,6 +24,8 @@ public class firstPerson : MonoBehaviour
     [SerializeField] Transform pies;
     [SerializeField] private float radioDeteccion;
     [SerializeField] LayerMask queEsSuelo;
+     worldParameters worldParameters;
+  
 
     CharacterController controller;
     void Start()
@@ -48,6 +53,10 @@ public class firstPerson : MonoBehaviour
 
         aplicarGravedad();
         tocoSuelo();
+        if (vidas > 4) { worldParameters.efecto2.intensity.value=0.25f;}
+        if (vidas > 3) { worldParameters.efecto2.intensity.value = 0.50f;}
+        if (vidas > 2) { worldParameters.efecto2.intensity.value = 0.75f;}
+        if (vidas > 1) { worldParameters.efecto2.intensity.value = 1f;}
     }
 
     private void aplicarGravedad()
@@ -87,7 +96,8 @@ public class firstPerson : MonoBehaviour
         if(vidas <= 0)
         {
             Destroy(gameObject);
-            
+            SceneManager.LoadScene(3);
+
         }
     }
 

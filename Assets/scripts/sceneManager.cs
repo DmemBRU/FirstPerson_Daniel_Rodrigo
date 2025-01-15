@@ -1,24 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
-public class worldParameters : MonoBehaviour
+public class sceneManager : MonoBehaviour
 {
-   
-    public Vignette efecto2;
-  
-    firstPerson player;
     // Start is called before the first frame update
     void Start()
     {
-        efecto2 = GetComponent<Vignette>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void EmpezarPartida()
+    {
+        SceneManager.LoadScene(1);
+
+    }
+    public void salirJuego()
+    {
+        Application.Quit();
     }
 }

@@ -15,5 +15,5 @@ MonoBehaviour:
   cargador: 100
   balasBolsa: 100
   rango: 20
-  danho: 0
+  danho: 50
   cadencia: 1

@@ -27,6 +27,7 @@ public class granadas : MonoBehaviour
     {
         Collider[] collsDetectados = Physics.OverlapSphere(transform.position, radioExplosion, quedetecto);
         Instantiate(explosion, transform.position, Quaternion.identity);
+       
         if (collsDetectados.Length > 0) 
         {
             foreach (Collider coll in collsDetectados) 
@@ -39,6 +40,7 @@ public class granadas : MonoBehaviour
 
         
         }
+        
 
     }
 

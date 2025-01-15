@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class cohete : MonoBehaviour
 {
@@ -18,6 +19,6 @@ public class cohete : MonoBehaviour
 
     public void lanzarCohete()
     {
-        
+        SceneManager.LoadScene(2);
     }
 }
