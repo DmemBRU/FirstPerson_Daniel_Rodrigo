@@ -41,29 +41,7 @@ public class Objetos : MonoBehaviour
         }
                    
     }
-    public void ObtenerArmas()
-    {
-        if(EsPistola == true)
-        {
-            weaponHolderç.TengoPistola = true;
-            Destroy(this.gameObject);
-        }
-        if(EsEscopeta == true)
-        {
-            weaponHolderç.TengoEscopeta = true;
-            Destroy(this.gameObject);
-        }
-        if(EsAutomatica == true)
-        {
-            weaponHolderç.TengoAutomatica = true;
-            Destroy(this.gameObject);
-        }
-        if(EsLanzaGranadas == true)
-        {
-            weaponHolderç.TengoGranadas = true;
-            Destroy(this.gameObject);
-        }
-    }
+    
     public void ObtenerLlaves()
     {
         Destroy(this.gameObject);

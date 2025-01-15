@@ -69,5 +69,25 @@ public class weaponHolderç : MonoBehaviour
             armas[armaActual].SetActive(true);
         }
     }
-}
+
+    public void recibirArma(int arma)
+    {
+        if (arma == 1)
+        {
+            TengoPistola = true;
+        }
+        if (arma == 2)
+        {
+            TengoEscopeta = true;
+        }
+        if (arma == 3)
+        {
+            TengoAutomatica = true;
+        }
+        if (arma == 4)
+        {
+            TengoGranadas = true;
+        }
+    }
+}   
 

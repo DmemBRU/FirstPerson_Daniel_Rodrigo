@@ -13,10 +13,12 @@ public class interacciones : MonoBehaviour
     Transform interactuableActual;
     [SerializeField] TMP_Text textoLlaves;
     int llaves = 0;
+    weaponHolderç weaponHolderç;
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
+       
     }
 
     // Update is called once per frame
@@ -39,12 +41,30 @@ public class interacciones : MonoBehaviour
                     textoLlaves.SetText(":" + llaves);
                      
                    }
-                   if(scriptObjeto.EsLlave == false)
+                   if(scriptObjeto.EsPistola == true)
                    {
-                    scriptObjeto.ObtenerArmas();
-                    
+
+                        weaponHolderç.recibirArma(1);
                     
                    }
+                    if (scriptObjeto.EsEscopeta == true)
+                    {
+
+                        weaponHolderç.recibirArma(2);
+
+                    }
+                    if (scriptObjeto.EsAutomatica == true)
+                    {
+
+                        weaponHolderç.recibirArma(3);
+
+                    }
+                    if (scriptObjeto.EsLanzaGranadas == true)
+                    {
+
+                        weaponHolderç.recibirArma(4);
+
+                    }
                 }
             }
             else if(hitInfo.transform.TryGetComponent(out cohete scriptCohete))
