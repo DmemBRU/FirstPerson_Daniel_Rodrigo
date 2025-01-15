@@ -53,10 +53,10 @@ public class firstPerson : MonoBehaviour
 
         aplicarGravedad();
         tocoSuelo();
-        if (vidas > 4) { worldParameters.efecto2.intensity.value=0.25f;}
-        if (vidas > 3) { worldParameters.efecto2.intensity.value = 0.50f;}
-        if (vidas > 2) { worldParameters.efecto2.intensity.value = 0.75f;}
-        if (vidas > 1) { worldParameters.efecto2.intensity.value = 1f;}
+       // if (vidas > 4) { worldParameters.efecto2.intensity.value=0.25f;}
+        //if (vidas > 3) { worldParameters.efecto2.intensity.value = 0.50f;}
+        //if (vidas > 2) { worldParameters.efecto2.intensity.value = 0.75f;}
+        //if (vidas > 1) { worldParameters.efecto2.intensity.value = 1f;}
     }
 
     private void aplicarGravedad()

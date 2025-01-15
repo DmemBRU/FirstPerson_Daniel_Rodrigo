@@ -6,7 +6,8 @@ public class Escopeta : MonoBehaviour
 {
   [SerializeField]ParticleSystem system;
     [SerializeField] ArmaSO misDatos;
-    [SerializeField] AudioClip disparo;
+    
+    
 
     private Camera cam;
     // Start is called before the first frame update
