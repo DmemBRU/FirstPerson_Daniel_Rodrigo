@@ -95,5 +95,20 @@ public class enemigo : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(direccionAPlayer);
 
     }
-
+    #region eventosAnimacion
+    private void cerrarVentanaAtque()
+    {
+        ventanaAbierta = false;
+    }
+    private void finAtaque()
+    {
+        agent.isStopped = false;
+        danioRealizado = false;
+        anim.SetBool("ataque", false);
+    }
+    private void abrirVentanaAtaque()
+    {
+        ventanaAbierta = true;
+    }
+    #endregion
 }
