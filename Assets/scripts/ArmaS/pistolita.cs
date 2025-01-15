@@ -30,7 +30,7 @@ public class pistolita : MonoBehaviour
                 {
                     Debug.Log(hitInfo.transform.name);
 
-                    hitInfo.transform.GetComponent<enemyPart>().RecibirDanio(misDatos.daño);
+                    hitInfo.transform.GetComponent<enemyPart>().RecibirDanio(misDatos.danho);
                 }
 
 

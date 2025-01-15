@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class weaponHolderç : MonoBehaviour
 {
+    [SerializeField]public bool TengoPistola = false;
+    [SerializeField]public bool TengoEscopeta = false;
+    [SerializeField]public bool TengoAutomatica = false;
+    [SerializeField]public bool TengoGranadas = false;
+
+
     [SerializeField] GameObject[] armas;
+
     int armaActual = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -23,10 +30,22 @@ public class weaponHolderç : MonoBehaviour
 
     private void cambioArmaNumeros()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) { cambioArma(0); }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) { cambioArma(1); }
-        if(Input.GetKeyDown(KeyCode.Alpha3)) { cambioArma(2); }
-        if (Input.GetKeyDown(KeyCode.Alpha4)) { cambioArma(3); }
+        if(TengoPistola == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1)) { cambioArma(0); }
+        }
+        if(TengoPistola == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha2)) { cambioArma(1); }
+            }
+        if(TengoPistola == true)
+        {
+            if(Input.GetKeyDown(KeyCode.Alpha3)) { cambioArma(2); }
+            }
+        if(TengoPistola == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha4)) { cambioArma(3); }
+            }
     }
     private void cambioArmaRaton()
     {

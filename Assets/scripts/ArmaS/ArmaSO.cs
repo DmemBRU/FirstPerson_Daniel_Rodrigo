@@ -9,6 +9,6 @@ public class ArmaSO : ScriptableObject
     public int cargador;
     public int balasBolsa;
     public float rango;
-    public float daño;
+    public float danho;
     public float cadencia;
 }

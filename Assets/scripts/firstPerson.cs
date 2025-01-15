@@ -84,8 +84,10 @@ public class firstPerson : MonoBehaviour
     public void recibirdanio(float danioRecibido)
     {
         vidas -= danioRecibido;
-        if(vidas <= 0){
+        if(vidas <= 0)
+        {
             Destroy(gameObject);
+            
         }
     }
 

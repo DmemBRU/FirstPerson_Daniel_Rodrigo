@@ -223,7 +223,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300004, guid: 72e388bcbb7b0d04caff9ab498663cb1, type: 3}
 --- !u!114 &-3764326231022852044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   quedetecto:
     serializedVersion: 2
     m_Bits: 0
-  radioExplosion: 0
+  radioExplosion: 5
   explosion: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
 --- !u!1 &1003873161969580319
 GameObject:
